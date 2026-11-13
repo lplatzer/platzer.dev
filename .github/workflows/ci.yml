@@ -38,8 +38,9 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Secrets scan
         run: gitleaks git --redact --no-banner
+      # Build first: it generates the content-collections types that lint and typecheck need.
+      - run: pnpm build
       - run: pnpm check
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm test
-      - run: pnpm build
