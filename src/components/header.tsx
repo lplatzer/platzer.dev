@@ -1,18 +1,13 @@
 import { Logo } from "@/components/logo"
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Link } from "@tanstack/react-router"
 import { ExternalLink } from "lucide-react"
-import { Button } from "./ui/button"
 import { Badge } from "./ui/badge"
-import { tools } from "@/data/tools"
 
 export function Header() {
   return (
@@ -62,28 +57,5 @@ export function Header() {
         </Badge>
       </div>
     </header>
-  )
-}
-function ListItem({
-  title,
-  children,
-  href,
-  ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
-  return (
-    <li {...props}>
-      <NavigationMenuLink
-        render={
-          <Link to={href}>
-            <div className="flex flex-col gap-1 text-sm">
-              <div className="leading-none font-medium">{title}</div>
-              <div className="line-clamp-2 text-muted-foreground">
-                {children}
-              </div>
-            </div>
-          </Link>
-        }
-      />
-    </li>
   )
 }

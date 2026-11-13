@@ -5,7 +5,6 @@ import {
   Card,
   CardAction,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -79,7 +78,7 @@ function Home() {
         <div>
           <img
             src={luisPlatzerImage}
-            alt="Image of Luis Platzer"
+            alt="Luis Platzer"
             width={724}
             height={1086}
             className="max-h-[560px] w-auto rounded-xl object-cover"
@@ -114,7 +113,7 @@ function Home() {
                     ))}
                   </div>
                   <div>
-                    <Button render={<Link to={tool.to} />}>
+                    <Button render={<Link to={tool.href} />}>
                       Explore {tool.title}
                     </Button>
                   </div>

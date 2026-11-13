@@ -1,3 +1,8 @@
-package-lock.json
 pnpm-lock.yaml
-yarn.lock
+dist
+.output
+.content-collections
+.tanstack
+src/routeTree.gen.ts
+# No formatter handles MDX 3 safely yet (Prettier only supports MDX v1)
+*.mdx
