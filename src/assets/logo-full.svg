@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 30" fill="none" role="img" aria-label="Luis Platzer wordmark">
+  
+  <g stroke="#3d6b4f" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="5" y1="2" x2="5" y2="28"></line>
+    <line x1="5" y1="28" x2="18" y2="28"></line>
+    <path d="M5,2 C9.5,2 21,2 21,11 C21,20 9.5,20 5,20"></path>
+  </g>
+
+  
+  <text x="32" y="20" font-family="&#39;DM Sans&#39;, system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" letter-spacing="0.03em" fill="#1c1c17">Luis Platzer</text>
+</svg>
