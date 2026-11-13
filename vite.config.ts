@@ -10,7 +10,8 @@ const config = defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [
     devtools(),
-    cloudflare({ viteEnvironment: { name: "ssr" } }),
+    // The Cloudflare plugin rejects the SSR environment Vitest sets up, so tests run without it.
+    !process.env.VITEST && cloudflare({ viteEnvironment: { name: "ssr" } }),
     tailwindcss(),
     tanstackStart(),
     viteReact(),
