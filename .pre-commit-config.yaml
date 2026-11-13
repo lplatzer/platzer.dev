@@ -1,0 +1,40 @@
+# Run by prek (https://github.com/j178/prek). Install hooks once: `prek install --install-hooks`
+default_install_hook_types: [pre-commit, pre-push]
+
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks
+        name: gitleaks (staged changes)
+        entry: gitleaks git --pre-commit --staged --redact --no-banner
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]
+
+      - id: prettier
+        name: prettier
+        entry: pnpm exec prettier --write --ignore-unknown
+        language: system
+        types_or: [javascript, jsx, ts, tsx, json, css, markdown, yaml]
+        stages: [pre-commit]
+
+      - id: eslint
+        name: eslint
+        entry: pnpm exec eslint --fix
+        language: system
+        types_or: [javascript, jsx, ts, tsx]
+        stages: [pre-commit]
+
+      - id: typecheck
+        name: typecheck
+        entry: pnpm typecheck
+        language: system
+        pass_filenames: false
+        stages: [pre-push]
+
+      - id: test
+        name: test
+        entry: pnpm test
+        language: system
+        pass_filenames: false
+        stages: [pre-push]
